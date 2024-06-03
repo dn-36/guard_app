@@ -17,19 +17,17 @@ class ViewModelContacts @Inject constructor(
 ) :ViewModel() {
 
 
-        var isUsedSetScreen = true
+       private var isUsedSetScreen = false
         var stateContacts by mutableStateOf(ContactsState())
-
-
-
+        private set
 
 
     fun processIntent(event: IntentContact) {
         when (event) {
             is IntentContact.SetScreenContact -> {
-        if (isUsedSetScreen){
-            isUsedSetScreen = false
-        }
+        if (isUsedSetScreen) return
+            isUsedSetScreen = true
+
                 val infoPhone = getInfoPhoneUseCase.getInfo()
                 stateContacts = ContactsState(
                     allUnnecessaryContacts = infoPhone.allUnnecessaryContacts,

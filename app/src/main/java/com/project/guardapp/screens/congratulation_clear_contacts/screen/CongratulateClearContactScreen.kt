@@ -16,7 +16,7 @@ fun CongratulateContactScreen(
 viewModel.processIntent(CongratilationClearAppIntent.SetScreen)
     CongratilationToast(
         textCongratilation = "Адреса контактов были\n оптимизированы!",
-        countOptimized = ViewModelCongratulationClearContact.state.countContact,
+        countOptimized = viewModel.state.countContact,
         clickButton = {viewModel.processIntent(CongratilationClearAppIntent.Continue(navController))}
     )
 }

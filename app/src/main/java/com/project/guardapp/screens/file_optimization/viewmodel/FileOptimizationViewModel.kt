@@ -1,6 +1,7 @@
 package com.project.guardapp.screens.file_optimization.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.project.guardapp.common.ChangeDataApp
 import com.project.guardapp.utils.GetCurrentDayOfMonth
 import dagger.hilt.android.lifecycle.HiltViewModel
 import module.domain.usecases.AdMobUseCase
@@ -28,9 +29,9 @@ class FileOptimizationViewModel @Inject constructor(
                )
                adMob.loadAds(appId = com.project.guardapp.common.ConstKeys.ADMOB_APP_ID)
                saveAppInfoUseCase.setDataDay(GetCurrentDayOfMonth.excecute())
-               com.project.guardapp.common.ChangeDataApp.procentOptimizationData = if(com.project.guardapp.common.ChangeDataApp.isDoneOptimizationMemory) 55 else 0
-               com.project.guardapp.common.ChangeDataApp.clearMegabyte = 0F
-               com.project.guardapp.common.ChangeDataApp.isDoneOptimizationMemory = true
+               ChangeDataApp.procentOptimizationData = if(ChangeDataApp.isDoneOptimizationMemory) 55 else 0
+               ChangeDataApp.clearMegabyte = 0F
+               ChangeDataApp.isDoneOptimizationMemory = true
            }
         }
 

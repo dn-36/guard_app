@@ -32,6 +32,7 @@ class ViewModelDeleteResMessenger @Inject constructor(
         var deleteResAppsState by mutableStateOf(
             DeleteResMessengerState()
         )
+        private set
 
        private var isUsed = true
 

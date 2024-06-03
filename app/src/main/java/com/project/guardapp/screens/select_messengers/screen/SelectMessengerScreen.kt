@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -43,8 +44,8 @@ fun SelectMessengerScreen(
     navController: NavController,
     viewModel : ViewModelSelectMessenger = hiltViewModel(),
 ){
-
-  viewModel.processIntent(SelectMessengerIntent.SetScreen)
+  val coroutineScope = rememberCoroutineScope()
+  viewModel.processIntent(SelectMessengerIntent.SetScreen(coroutineScope))
 
     Box(modifier = Modifier
         .fillMaxSize()
@@ -56,8 +57,13 @@ fun SelectMessengerScreen(
             verticalAlignment = Alignment.CenterVertically) {
             Image(
                 painter = painterResource(id = R.drawable.back_button), contentDescription = null,
-                modifier = Modifier.size(30.dp)
-                    .clickable { com.project.guardapp.common.intent.GoBackMenuIntent.excecute(navController) }
+                modifier = Modifier
+                    .size(30.dp)
+                    .clickable {
+                        com.project.guardapp.common.intent.GoBackMenuIntent.excecute(
+                            navController
+                        )
+                    }
 
             )
             Text(

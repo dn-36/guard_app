@@ -9,7 +9,7 @@ import com.project.guardapp.common.ChangeDataApp
 
 class ViewModelProgress : ViewModel() {
         var progressState by mutableStateOf(ProgressState())
-
+        private set
 
     fun processIntent(
       //  event:IntentProgress

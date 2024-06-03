@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
+import com.project.guardapp.common.ChangeDataApp
 import com.project.guardapp.common.navigate.Screen
 import com.project.guardapp.utils.GetCurrentDayOfMonth
 import com.project.guardapp.utils.GetNumberMbCleanToday
@@ -60,7 +61,6 @@ class ViewModelMenu @Inject constructor(
             }
 
             is IntentMenu.TakingCareAdvice -> {
-                // TakeCareAdviceIntent.execute(navController = event.navController)
                 takeCareAdviceIntent(
                     navController = intent.navController
                 )
@@ -73,7 +73,6 @@ class ViewModelMenu @Inject constructor(
 
             is IntentMenu.ShowCleanApp -> {
                 showCleanAppIntent(intent.navController)
-                // _menuState.value = _menuState.value.copy()
             }
 
         }
@@ -110,18 +109,18 @@ class ViewModelMenu @Inject constructor(
         if (isUse) return
         isUse = true
 
-        com.project.guardapp.common.ChangeDataApp.clearMegabyte = getSavedAppInfoUseCase.getFreeMegabytes()
-        com.project.guardapp.common.ChangeDataApp.procentOptimizationData = GetProcentOptimization.excecute()
-        com.project.guardapp.common.ChangeDataApp.isDoneApplicationСare = getSavedAppInfoUseCase.getTakeCareDeviceDone()
-        com.project.guardapp.common.ChangeDataApp.isDoneHackerProtection = getSavedAppInfoUseCase.getHaccersDone()
-        com.project.guardapp.common.ChangeDataApp.isDoneContacts = getSavedAppInfoUseCase.getContactsDone()
-        com.project.guardapp.common.ChangeDataApp.isDoneClearMessengers = getSavedAppInfoUseCase.getMessengersDone()
-        com.project.guardapp.common.ChangeDataApp.isDoneOptimizationMemory =
+        ChangeDataApp.clearMegabyte = getSavedAppInfoUseCase.getFreeMegabytes()
+        ChangeDataApp.procentOptimizationData = GetProcentOptimization.excecute()
+        ChangeDataApp.isDoneApplicationСare = getSavedAppInfoUseCase.getTakeCareDeviceDone()
+        ChangeDataApp.isDoneHackerProtection = getSavedAppInfoUseCase.getHaccersDone()
+        ChangeDataApp.isDoneContacts = getSavedAppInfoUseCase.getContactsDone()
+        ChangeDataApp.isDoneClearMessengers = getSavedAppInfoUseCase.getMessengersDone()
+        ChangeDataApp.isDoneOptimizationMemory =
             getSavedAppInfoUseCase.getOptimizationRememberDone()
-        com.project.guardapp.common.ChangeDataApp.isDoneApplicationManager =
+        ChangeDataApp.isDoneApplicationManager =
             getSavedAppInfoUseCase.getApplicationDone()
 
-        val actualMegabyte = if (com.project.guardapp.common.ChangeDataApp.activityContext!!
+        val actualMegabyte = if (ChangeDataApp.activityContext!!
                 .intent.getFloatExtra("EXTRA_FLOAT", 0F) == 0F
         ) {
             GetNumberMbCleanToday.excecute(
@@ -129,26 +128,26 @@ class ViewModelMenu @Inject constructor(
                 getSavedAppInfoUseCase.getSavedLastDay()
             )
         } else {
-            com.project.guardapp.common.ChangeDataApp.activityContext!!
+            ChangeDataApp.activityContext!!
                 .intent.getFloatExtra("EXTRA_FLOAT", 0F)
         }
 
-        if (com.project.guardapp.common.ChangeDataApp.clearMegabyte == 0F) {
-            com.project.guardapp.common.ChangeDataApp.isDoneOptimizationMemory = true
+        if (actualMegabyte == 0F) {
+            ChangeDataApp.isDoneOptimizationMemory = true
         }
-        isUse = false
-        com.project.guardapp.common.ChangeDataApp.procentOptimizationData = GetProcentOptimization.excecute()
+
+        ChangeDataApp.procentOptimizationData = GetProcentOptimization.excecute()
 
         menuState = menuState.copy(
             modelPhone = getInfoPhoneUseCase().title,
             clearMegabyte = actualMegabyte,
-            procentOptimizationData = com.project.guardapp.common.ChangeDataApp.procentOptimizationData,
-            isDoneOptimizationMemory = com.project.guardapp.common.ChangeDataApp.isDoneOptimizationMemory,
-            isDoneApplicationСare = com.project.guardapp.common.ChangeDataApp.isDoneApplicationСare,
-            isDoneHackerProtection = com.project.guardapp.common.ChangeDataApp.isDoneHackerProtection,
-            isDoneContacts = com.project.guardapp.common.ChangeDataApp.isDoneContacts,
-            isDoneClearMessengers = com.project.guardapp.common.ChangeDataApp.isDoneClearMessengers,
-            isDoneApplicationManager = com.project.guardapp.common.ChangeDataApp.isDoneApplicationManager
+            procentOptimizationData = ChangeDataApp.procentOptimizationData,
+            isDoneOptimizationMemory = ChangeDataApp.isDoneOptimizationMemory,
+            isDoneApplicationСare = ChangeDataApp.isDoneApplicationСare,
+            isDoneHackerProtection = ChangeDataApp.isDoneHackerProtection,
+            isDoneContacts = ChangeDataApp.isDoneContacts,
+            isDoneClearMessengers = ChangeDataApp.isDoneClearMessengers,
+            isDoneApplicationManager = ChangeDataApp.isDoneApplicationManager
         )
 
     }

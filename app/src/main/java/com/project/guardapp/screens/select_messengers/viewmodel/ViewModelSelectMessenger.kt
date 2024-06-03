@@ -33,7 +33,7 @@ class ViewModelSelectMessenger @Inject constructor(
             is SelectMessengerIntent.SetScreen -> {
                 if(isUsedSetScreen) {
                     isUsedSetScreen = false
-                CoroutineScope(Dispatchers.IO).launch {
+                intent.coroutineScope.launch(Dispatchers.IO) {
 
                         val listAppsPresentation = arrayListOf<SelectMessengerPresentation>()
                         var sizeFileSystem = 0F
