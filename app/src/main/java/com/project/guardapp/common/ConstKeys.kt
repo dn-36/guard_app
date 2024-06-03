@@ -1,0 +1,13 @@
+package com.project.guardapp.common
+
+object ConstKeys {
+    const val FORMAT_MEGABYTES:String = "FORMAT_TITLE_MEGABYTES"
+    const val TIME_MINUTS:String = "TIME_MINUTS"
+    const val TIME_HOURS:String = "TIME_HOURS"
+    const val AFTHER_TITLE_NOTIFICATIONS:String = "AFTHER_TITLE_NOTIFICATIONS"
+    const val BEGIN_TITLE_NOTIFICATIONS:String = "BEGIN_TITLE_NOTIFICATIONS"
+    const val DESCRIPTION_NOTIFICATIONS:String = "DESCRIPTION_NOTIFICATIONS"
+    const val IS_VISIBLE_PROCENT_OPTIMIZATE:String = "IS_VISIBLE_PROCENT_OPTIMIZATE"
+    const val ADMOB_APP_ID = "ca-app-pub-5239491814636240/6328229228"
+    const val YANDEX_APP_METRIC_KEY = "864020b2-b5b6-48f5-a4d1-5a5ad7fd113f"
+}

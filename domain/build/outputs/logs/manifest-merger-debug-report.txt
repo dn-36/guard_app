@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/dimapankov/Downloads/android_cleaner-Dima_branch 2/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14009161921383058299.xml:2:13-83
+INJECTED from /Users/dimapankov/Downloads/android_cleaner-Dima_branch 2/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14009161921383058299.xml:2:13-83
+	package
+		INJECTED from /Users/dimapankov/Downloads/android_cleaner-Dima_branch 2/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14009161921383058299.xml
+	xmlns:android
+		ADDED from /Users/dimapankov/Downloads/android_cleaner-Dima_branch 2/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14009161921383058299.xml:2:23-81
+uses-sdk
+INJECTED from /Users/dimapankov/Downloads/android_cleaner-Dima_branch 2/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14009161921383058299.xml reason: use-sdk injection requested
+INJECTED from /Users/dimapankov/Downloads/android_cleaner-Dima_branch 2/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14009161921383058299.xml
+INJECTED from /Users/dimapankov/Downloads/android_cleaner-Dima_branch 2/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14009161921383058299.xml
+	android:targetSdkVersion
+		INJECTED from /Users/dimapankov/Downloads/android_cleaner-Dima_branch 2/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14009161921383058299.xml
+	android:minSdkVersion
+		INJECTED from /Users/dimapankov/Downloads/android_cleaner-Dima_branch 2/domain/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14009161921383058299.xml

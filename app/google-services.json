@@ -1,0 +1,30 @@
+
+{
+  "project_info": {
+    "project_number": "446745205185",
+    "project_id": "androidguardapp",
+    "storage_bucket": "androidguardapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446745205185:android:057fcf57609a896e753740",
+        "android_client_info": {
+          "package_name": "com.project.guardapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBo1NhTTJIXHvCTKRVYqH2cIEwSG9MmKJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
